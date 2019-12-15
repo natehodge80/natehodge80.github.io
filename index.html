@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="NateSE.css">
+
+    <!-- add JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script>
+
+    /*function getFormValues() {
+      var firstName = document.getElementById("firstnameinput").value;
+      var lastName = document.getElementById("lastnameinput").value;
+      var email = document.getElementById("emailinput").value;
+      console.log('firstName: ', firstName);
+      console.log('lastName: ', lastName);
+      console.log('email: ', email);
+    }
+    */
+    addEventListener("submit", function(event) {
+      event.preventDefault();
+      // getFormValues();
+      // console.log( $('form').serializeArray());
+      var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
+      /* var myArray = [
+        {
+          name: "firstname",
+          value: document.getElementById("firstnameinput").value
+        },
+        {
+          name: "lastname",
+          value: document.getElementById("lastnameinput").value
+        },
+        {
+          name: "email",
+          value: document.getElementById("emailinput").value
+        }]
+      */
+      var myObj = {
+        fields: myArray
+      };
+      // console.log(myObj);
+      var myJSON = JSON.stringify(myObj);
+      // console.log(myJSON);
+      $.ajax({
+                  type: "POST",
+                  url: 'https://api.hsforms.com/submissions/v3/integration/submit/434181/35609970-0332-48a3-ad8e-46ebcec79b03', //change to your url
+                  data: JSON.stringify(myObj) , // pass json object to web api
+                  contentType: 'application/json',
+                  success: function () {
+                  alert('success!');
+                  }
+                });
+              });
+
+    </script>
+
+    <title>Nate Hodge SE Application</title>
+  </head>
+
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="row">
+          <h1 class="display-4"> Nate's Journey at HubSpot </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="row">
+            <img src="file:///Users/nhodge/Downloads/Nate%20and%20Caroline.jpg" alt="nate and caroline" width="225" height="300">
+          </div>
+          <div class="row">
+            <form>
+              First name:<br>
+              <input type="text" name="firstname" id="firstnameinput"><br>
+              Last name:<br>
+              <input type="text" name="lastname" id="lastnameinput"><br>
+              Email:<br>
+              <input type="text" name="email" id="emailinput"><br>
+              <br>
+              <input type="submit" value="Submit to Hire Nate!" class="btn btn-outline-success">
+            </form>
+          </div>
+        </div>
+        <div class="col-8">
+          <div>
+            <h2 class="btn btn-link font-weight-bold warning-lighter-hover" aria-expanded="false" aria-controls="sales" data-target="#sales" data-toggle="collapse"> Sales </h2>
+              <ul class="collapse" id="sales">
+                <li> Point #1 </li>
+                <li> Point #2 </li>
+                <li> Point #3 </li>
+              </ul>
+          </div>
+          <div>
+            <h2 class="btn btn-link font-weight-bold warning-lighter-hover" aria-expanded="false" aria-controls="csm" data-target="#csm" data-toggle="collapse"> CSM </h2>
+              <ul class="collapse" id="csm">
+                <li> Point #1 </li>
+                <li> Point #2 </li>
+                <li> Point #3 </li>
+              </ul>
+          </div>
+          <div>
+            <h2 class="btn btn-link font-weight-bold warning-lighter-hover" aria-expanded="false" aria-controls="swat" data-target="#swat" data-toggle="collapse"> SWAT </h2>
+              <ul class="collapse" id="swat">
+                <li> Point #1 </li>
+                <li> Point #2 </li>
+                <li> Point #3 </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Bootstrap JavaScript Library -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/434181.js"></script>
+    <!-- End of HubSpot Embed Code -->
+  </body>
+
+</html>
