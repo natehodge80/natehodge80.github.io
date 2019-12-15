@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Cardo-Regular';
+  src: url('Cardo-Regular.eot');
+  src: url('Cardo-Regular.woff') format('woff'),
+       url('Cardo-Regular.ttf') format('truetype'),
+       url('Cardo-Regular.svg#Cardo-Regular') format('svg');
+}
+
+body {
+  background-color: white;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Cardo-Regular';
+}
+
+h2 {
+  font-family: 'Cardo-Regular';
+}
+
+form {
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+img {
+  margin-bottom: 1em;
+  margin-top: -1em;
+}
+
+.jumbotron {
+  background-color: orange;
+}
+
+.warning-lighter-hover {
+  color: #FF8800;
+  -webkit-transition: .4s;
+  transition: .4s;
+  font-size: 50px;
+}
+
+.warning-lighter-hover:hover {
+  -webkit-transition: .4s;
+  transition: .4s;
+  color: #ffac4d;
+  font-size: 50px;
+}
