@@ -25,11 +25,11 @@ form {
   border: 1px solid #CCC;
   border-radius: 1em;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 img {
   margin-bottom: 1em;
-  margin-top: 1em;
 }
 
 .jumbotron {
