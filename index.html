@@ -12,58 +12,6 @@
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="main.css">
 
-    <!-- Add JQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-    <script>
-
-    /*function getFormValues() {
-      var firstName = document.getElementById("firstnameinput").value;
-      var lastName = document.getElementById("lastnameinput").value;
-      var email = document.getElementById("emailinput").value;
-      console.log('firstName: ', firstName);
-      console.log('lastName: ', lastName);
-      console.log('email: ', email);
-    }
-    */
-    addEventListener("submit", function(event) {
-      event.preventDefault();
-      // getFormValues();
-      // console.log( $('form').serializeArray());
-      var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
-      /* var myArray = [
-        {
-          name: "firstname",
-          value: document.getElementById("firstnameinput").value
-        },
-        {
-          name: "lastname",
-          value: document.getElementById("lastnameinput").value
-        },
-        {
-          name: "email",
-          value: document.getElementById("emailinput").value
-        }]
-      */
-      var myObj = {
-        fields: myArray
-      };
-      // console.log(myObj);
-      var myJSON = JSON.stringify(myObj);
-      // console.log(myJSON);
-      $.ajax({
-                  type: "POST",
-                  url: 'https://api.hsforms.com/submissions/v3/integration/submit/434181/35609970-0332-48a3-ad8e-46ebcec79b03', //change to your url
-                  data: JSON.stringify(myObj) , // pass json object to web api
-                  contentType: 'application/json',
-                  success: function () {
-                  alert('Success!');
-                  }
-                });
-              });
-
-    </script>
-
     <title>Nate Hodge SE Assessment</title>
   </head>
 
@@ -127,6 +75,58 @@
     <!-- Bootstrap JavaScript Library -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+   
+    <!-- Add JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script>
+
+    /*function getFormValues() {
+      var firstName = document.getElementById("firstnameinput").value;
+      var lastName = document.getElementById("lastnameinput").value;
+      var email = document.getElementById("emailinput").value;
+      console.log('firstName: ', firstName);
+      console.log('lastName: ', lastName);
+      console.log('email: ', email);
+    }
+    */
+    addEventListener("submit", function(event) {
+      event.preventDefault();
+      // getFormValues();
+      // console.log( $('form').serializeArray());
+      var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
+      /* var myArray = [
+        {
+          name: "firstname",
+          value: document.getElementById("firstnameinput").value
+        },
+        {
+          name: "lastname",
+          value: document.getElementById("lastnameinput").value
+        },
+        {
+          name: "email",
+          value: document.getElementById("emailinput").value
+        }]
+      */
+      var myObj = {
+        fields: myArray
+      };
+      // console.log(myObj);
+      var myJSON = JSON.stringify(myObj);
+      // console.log(myJSON);
+      $.ajax({
+                  type: "POST",
+                  url: 'https://api.hsforms.com/submissions/v3/integration/submit/434181/35609970-0332-48a3-ad8e-46ebcec79b03', //change to your url
+                  data: JSON.stringify(myObj) , // pass json object to web api
+                  contentType: 'application/json',
+                  success: function () {
+                  alert('Success!');
+                  }
+                });
+              });
+
+    </script>     
       
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/434181.js"></script>
