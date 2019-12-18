@@ -88,7 +88,7 @@
       //for testing JQuery
       //console.log( $('form').serializeArray());
       //also created manual array based on form inputs gathered from methods in my first function
-      var myArray = [
+      /*var myArray = [
         {
           name: "firstname",
           value: document.getElementById("firstnameinput").value
@@ -101,10 +101,22 @@
           name: "email",
           value: document.getElementById("emailinput").value
         }]
-
+      */
       //created an object using format from AJAX forms API and array from above
       var myObj = {
-        fields: myArray,
+        fields: [
+        {
+          name: "firstname",
+          value: document.getElementById("firstnameinput").value
+        },
+        {
+          name: "lastname",
+          value: document.getElementById("lastnameinput").value
+        },
+        {
+          name: "email",
+          value: document.getElementById("emailinput").value
+        }],
   "context": {
     "hutk": ":hutk", // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
     "pageUri": "www.example.com/page",
