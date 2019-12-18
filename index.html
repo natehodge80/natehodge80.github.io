@@ -101,13 +101,6 @@
           value: document.getElementById("emailinput").value
         }]
       
- var hutk = function(){
-  var pairs = document.cookie.split(";");
-  var cookies = {};
-  for (var i=0; i<pairs.length; i++){
-    var pair = pairs[i].split("=");
-    cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
-  }
       
       //created an object using format from AJAX forms API and array from above
       var myObj = {
@@ -134,6 +127,7 @@
                   alert('Success!');
                   }
                 });
+             });
     </script>     
       
     <!-- Start of HubSpot Embed Code -->
