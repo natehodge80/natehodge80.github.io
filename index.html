@@ -108,16 +108,16 @@
         {
           name: "email",
           value: document.getElementById("emailinput").value
-        }],
+        }]
+     
+      var myObj = {
+        fields: myArray,
           "context": {
           "hutk": ":hutk", // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
           "pageUri": "https://natehodge80.github.io",
           "pageName": "Nate Hodge SE Assessment"
           };
-     
-      var myObj = {
-        fields: myArray
-      };
+        };
       // console.log(myObj);
       var myJSON = JSON.stringify(myObj);
       // console.log(myJSON);
