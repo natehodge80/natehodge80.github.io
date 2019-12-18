@@ -100,7 +100,11 @@
         {
           name: "email",
           value: document.getElementById("emailinput").value
-        }],
+        }]
+
+      //created an object using format from AJAX forms API and array from above
+      var myObj = {
+        fields: myArray,
   "context": {
     "hutk": ":hutk", // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
     "pageUri": "www.example.com/page",
@@ -120,10 +124,6 @@
     }
   }
 }
-
-      //created an object using format from AJAX forms API and array from above
-      var myObj = {
-        fields: myArray
       };
       //testing my object
       //console.log(myObj);
