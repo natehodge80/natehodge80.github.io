@@ -79,16 +79,15 @@
     crossorigin="anonymous"></script>
 
     <script>
-
     //listening to the submit button on the form, preventing default refresh AJAX
     addEventListener("submit", function(event) {
       event.preventDefault();
       //found JQuery method to create an array based on inputs and JSON structure for API
-      // var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
+      //var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
       //for testing JQuery
       //console.log( $('form').serializeArray());
       //also created manual array based on form inputs gathered from methods in my first function
-      /*var myArray = [
+      var myArray = [
         {
           name: "firstname",
           value: document.getElementById("firstnameinput").value
@@ -101,95 +100,28 @@
           name: "email",
           value: document.getElementById("emailinput").value
         }]
-      */
+
       //created an object using format from AJAX forms API and array from above
-      /*var myObj = {
-        fields: [
-        {
-          name: "firstname",
-          value: document.getElementById("firstnameinput").value
-        },
-        {
-          name: "lastname",
-          value: document.getElementById("lastnameinput").value
-        },
-        {
-          name: "email",
-          value: document.getElementById("emailinput").value
-        }],
-  "context": {
-    "hutk": ":hutk", // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
-    "pageUri": "www.example.com/page",
-    "pageName": "Example page"
-  },
-  "legalConsentOptions": {
-    "consent": { // Include this object when GDPR options are enabled
-      "consentToProcess": true,
-      "text": "I agree to allow Example Company to store and process my personal data.",
-      "communications": [
-        {
-          "value": true,
-          "subscriptionTypeId": 999,
-          "text": "I agree to receive marketing communications from Example Company."
-        }
-      ]
-    }
-  }
-};*/
+      var myObj = {
+        fields: myArray
+      };
       //testing my object
       //console.log(myObj);
       //using stringify method to convert my object into a JSON string
-      // var myJSON = JSON.stringify(myObj);
+      var myJSON = JSON.stringify(myObj);
       //testing method for JSON string
       //console.log(myJSON);
       //using AJAX JQuery to post values from JSON string to HubSpot
       $.ajax({
                   type: "POST",
                   url: 'https://api.hsforms.com/submissions/v3/integration/submit/434181/35609970-0332-48a3-ad8e-46ebcec79b03', //change to your url
-                  dataType: "json",
-                  headers: {
-                  "accept": "application/json",
-                  "Access-Control-Allow-Origin":"*"
-                   }
-                  data: JSON.stringify({
-        fields: [
-        {
-          name: "firstname",
-          value: document.getElementById("firstnameinput").value
-        },
-        {
-          name: "lastname",
-          value: document.getElementById("lastnameinput").value
-        },
-        {
-          name: "email",
-          value: document.getElementById("emailinput").value
-        }],
-  "context": {
-    "hutk": ":hutk", // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
-    "pageUri": "www.example.com/page",
-    "pageName": "Example page"
-  },
-  "legalConsentOptions": {
-    "consent": { // Include this object when GDPR options are enabled
-      "consentToProcess": true,
-      "text": "I agree to allow Example Company to store and process my personal data.",
-      "communications": [
-        {
-          "value": true,
-          "subscriptionTypeId": 999,
-          "text": "I agree to receive marketing communications from Example Company."
-        }
-      ]
-    }
-  }),
+                  data: JSON.stringify(myObj) , // pass json object to web api
                   contentType: 'application/json',
                   success: function () {
                   alert('Success!');
                   }
                 });
               });
- 
     </script>     
       
     <!-- Start of HubSpot Embed Code -->
