@@ -133,6 +133,11 @@
       $.ajax({
                   type: "POST",
                   url: 'https://api.hsforms.com/submissions/v3/integration/submit/434181/35609970-0332-48a3-ad8e-46ebcec79b03', //change to your url
+                  dataType: "json",
+                  headers: {
+                  "accept": "application/json",
+                  "Access-Control-Allow-Origin":"*"
+                  }
                   data: JSON.stringify(myObj) , // pass json object to web api
                   contentType: 'application/json',
                   success: function () {
