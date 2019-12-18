@@ -84,7 +84,7 @@
     addEventListener("submit", function(event) {
       event.preventDefault();
       //found JQuery method to create an array based on inputs and JSON structure for API
-      var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
+      // var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
       //for testing JQuery
       //console.log( $('form').serializeArray());
       //also created manual array based on form inputs gathered from methods in my first function
@@ -100,7 +100,7 @@
         {
           name: "email",
           value: document.getElementById("emailinput").value
-        }],
+        }]
 
       //created an object using format from AJAX forms API and array from above
       var myObj = {
