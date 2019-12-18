@@ -93,7 +93,14 @@
       event.preventDefault();
       // getFormValues();
       // console.log( $('form').serializeArray());
-      var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
+      var myArray = $('form').serializeArray(),
+      "context": {
+      "hutk": ":hutk", // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
+      "pageUri": "https://natehodge80.github.io",
+      "pageName": "Nate Hodge SE Assessment"
+      };
+      
+      // found serialize array method from jQuery and did it manually
       /* var myArray = [
         {
           name: "firstname",
