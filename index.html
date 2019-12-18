@@ -101,6 +101,8 @@
           value: document.getElementById("emailinput").value
         }]
 
+      var hutk = document.cookie
+      
       //created an object using format from AJAX forms API and array from above
       var myObj = {
         fields: myArray,
@@ -111,7 +113,7 @@
         },
       };
       //testing my object
-      console.log(myObj);
+      //console.log(myObj);
       //using stringify method to convert my object into a JSON string
       var myJSON = JSON.stringify(myObj);
       //testing method for JSON string
