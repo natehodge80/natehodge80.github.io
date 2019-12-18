@@ -101,12 +101,17 @@
           value: document.getElementById("emailinput").value
         }]
       
+      function getCookie(hutk) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+      }
       
       //created an object using format from AJAX forms API and array from above
       var myObj = {
         fields: myArray,
         "context": {
-        "hutk": getCookie("hutk"), // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
+        "hutk": getCookie(hutk), // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
         "pageUri": "https://natehodge80.github.io",
         "pageName": "Nate SE Assessment"
         },
