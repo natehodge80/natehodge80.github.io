@@ -80,22 +80,14 @@
 
     <script>
 
-    /*function getFormValues() {
-      var firstName = document.getElementById("firstnameinput").value;
-      var lastName = document.getElementById("lastnameinput").value;
-      var email = document.getElementById("emailinput").value;
-      console.log('firstName: ', firstName);
-      console.log('lastName: ', lastName);
-      console.log('email: ', email);
-    }
-    */
+    //listening to the submit button on the form, preventing default refresh AJAX
     addEventListener("submit", function(event) {
       event.preventDefault();
-      // getFormValues();
-      // console.log( $('form').serializeArray());
-      // var myArray = $('form').serializeArray();
-      
-      // found serialize array method from jQuery and did it manually
+      //found JQuery method to create an array based on inputs and JSON structure for API
+      var myArray = $('form').serializeArray(); // found serialize array method from jQuery and did it manually
+      //for testing JQuery
+      //console.log( $('form').serializeArray());
+      //also created manual array based on form inputs gathered from methods in my first function
       var myArray = [
         {
           name: "firstname",
@@ -109,14 +101,19 @@
           name: "email",
           value: document.getElementById("emailinput").value
         }]
-     
+
+
+      //created an object using format from AJAX forms API and array from above
       var myObj = {
         fields: myArray
       };
-     
-      // console.log(myObj);
+      //testing my object
+      //console.log(myObj);
+      //using stringify method to convert my object into a JSON string
       var myJSON = JSON.stringify(myObj);
-      // console.log(myJSON);
+      //testing method for JSON string
+      //console.log(myJSON);
+      //using AJAX JQuery to post values from JSON string to HubSpot
       $.ajax({
                   type: "POST",
                   url: 'https://api.hsforms.com/submissions/v3/integration/submit/434181/35609970-0332-48a3-ad8e-46ebcec79b03', //change to your url
@@ -127,7 +124,7 @@
                   }
                 });
               });
-
+ 
     </script>     
       
     <!-- Start of HubSpot Embed Code -->
